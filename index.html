@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бейінді пәндері бар білім беру бағдарламаларының топтары</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Екі бейіндік пәнді таңдаңыз:</h2>
+    <form id="subjectForm">
+        <label for="subject1">Бірінші бейіндік пән:</label>
+        <select id="subject1" name="subject1">
+            <option value="biology">Биология</option>
+            <option value="geography">География</option>
+            <option value="mathematics">Математика</option>
+            <option value="physics">Физика</option>
+            <option value="kazakh_language">Қазақ тілі</option>
+            <option value="kazakh_literature">Қазақ әдебиеті</option>
+            <option value="russian_language">Орыс тілі</option>
+            <option value="russian_literature">Орыс әдебиеті</option>
+            <option value="chemistry">Химия</option>
+            <option value="legal_foundations">Құқық негіздері</option>
+            <option value="history_of_kazakhstan">Қазақстан тарихы</option>
+            <option value="world_history">Дүние жүзі тарихы</option>
+            <option value="english">Ағылшын</option>
+            <option value="informatics">Информатика</option>
+            <option value="entrepreneurship">Шығармашылық</option>
+        </select>
+        <br><br>
+        <label for="subject2">Екінші бейіндік пән:</label>
+        <select id="subject2" name="subject2">
+            <option value="biology">Биология</option>
+            <option value="geography">География</option>
+            <option value="mathematics">Математика</option>
+            <option value="physics">Физика</option>
+            <option value="kazakh_language">Қазақ тілі</option>
+            <option value="kazakh_literature">Қазақ әдебиеті</option>
+            <option value="russian_language">Орыс тілі</option>
+            <option value="russian_literature">Орыс әдебиеті</option>
+            <option value="chemistry">Химия</option>
+            <option value="legal_foundations">Құқық негіздері</option>
+            <option value="history_of_kazakhstan">Қазақстан тарихы</option>
+            <option value="world_history">Дүние жүзі тарихы</option>
+            <option value="english">Ағылшын</option>
+            <option value="informatics">Информатика</option>
+            <option value="entrepreneurship">Шығармашылық</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="showSpecialties()">Іздеу</button>
+    </form>
+    <div id="specialtiesList"></div>
+    <script>
+        function showSpecialties() {
+            const subject1 = document.getElementById("subject1").value;
+            const subject2 = document.getElementById("subject2").value;
+            if ((subject1 === 'biology' && subject2 === 'chemistry') ||
+                (subject1 === 'chemistry' && subject2 === 'biology')) {
+                const specialties = [
+                    { code: 'B012', name: 'Химия мұғалімдерін даярлау', grants: 770 },
+                    { code: 'B013', name: 'Биология мұғалімдерін даярлау', grants: 770 },
+                    { code: 'B050', name: 'Биологиялық және сабақтас ғылымдар', grants: 566 },
+                    { code: 'B053', name: 'Химия', grants: 650 },
+                    { code: 'B068', name: 'Азық-түлік өнімдерінің өндірісі', grants: 965 },
+                    { code: 'B072', name: 'Фармацевтикалық өндіріс технологиясы', grants: 852 },
+                    { code: 'B077', name: 'Өсімдік шаруашылығы', grants: 525 },
+                    { code: 'B078', name: 'Мал шаруашылығы', grants: 275 },
+                    { code: 'B080', name: 'Балық шаруашылығы', grants: 80 },
+                    { code: 'B083', name: 'Ветеринария', grants: 714 },
+                    { code: 'B084', name: 'Мейіргер ісі', grants: 20 },
+                    { code: 'B085', name: 'Фармация', grants: 50 },
+                    { code: 'B086', name: 'Жалпы медицина', grants: 1575 },
+                    { code: 'B087', name: 'Стоматология', grants: 20 },
+                    { code: 'B088', name: 'Педиатрия', grants: 500 },
+                    { code: 'B089', name: 'Қоғамдық денсаулық', grants: 150 }
+                ];
+                displaySpecialties(specialties);
+            }
+            else if ((subject1 === 'biology' && subject2 === 'geography') ||
+                    (subject1 === 'geography' && subject2 === 'biology')) {
+                    const specialties = [
+                    { code: 'B001', name: 'Педагогика және психология', grants: 250 },
+                    { code: 'B002', name: 'Мектепке дейінгі оқыту және тәрбиелеу', grants: 1216 },
+                    { code: 'B003', name: 'Бастауышта оқыту педагогикасы мен әдістемесі', grants: 625 },
+                    { code: 'B019', name: 'Әлеуметтік педагогтарды даярлау', grants: 260 },
+                    { code: 'B020', name: 'Арнайы педагогика', grants: 393 },
+                    { code: 'B041', name: 'Психология', grants: 300 },
+                    { code: 'B051', name: 'Қоршаған орта', grants: 310 },
+                    { code: 'B079', name: 'Орман шаруашылығы', grants: 221 },
+                    { code: 'B090', name: 'Әлеуметтік жұмыс', grants: 350 }
+                ];
+                displaySpecialties(specialties);
+            }
+            else if ((subject1 === 'english' && subject2 === 'geography') ||
+                    (subject1 === 'geography' && subject2 === 'english')) { 
+                    const specialties = [
+                    { code: 'B091', name: 'Туризм', grants: 365 },
+                    { code: 'B093', name: 'Мейрамхана ісі және мейманхана бизнесі', grants: 360 },                
+                ];
+                displaySpecialties(specialties);
+            }
+            else if ((subject1 === 'world_history' && subject2 === 'geography') ||
+                    (subject1 === 'geography' && subject2 === 'world_history')) { 
+                    const specialties = [
+                    { code: 'B008', name: 'Құқық және экономика негіздері мұғалімдерін даярлау', grants: 0 },
+                    { code: 'B014', name: 'География мұғалімдерін даярлау', grants: 205 },
+                    { code: 'B015', name: 'Гуманитарлық пәндер мұғалімдерін даярлау', grants: 388 },
+                    { code: 'B032', name: 'Философия және этика', grants: 110 },
+                    { code: 'B034', name: 'Тарих', grants: 117 }
+                ];
+                displaySpecialties(specialties);
+            }
+            else if ((subject1 === 'world_history' && subject2 === 'english') ||
+                    (subject1 === 'english' && subject2 === 'world_history')) { 
+                    const specialties = [
+                    { code: 'B018', name: 'Шет тілі мұғалімдерін даярлау', grants: 570 },
+                    { code: 'B035', name: 'Түркітану және шығыстану', grants: 80 },
+                    { code: 'B036', name: 'Аударма ісі', grants: 335 },
+                    { code: 'B039', name: 'Мәдениеттану', grants: 30 },
+                    { code: 'B040', name: 'Саясаттану', grants: 92 },
+                    { code: 'B140', name: 'Халықаралық қатынастар мен дипломатия', grants: 80 }
+                ];
+                displaySpecialties(specialties);
+            }
+            else if ((subject1 === 'world_history' && subject2 === 'legal_foundations') ||
+                    (subject1 === 'legal_foundations' && subject2 === 'world_history')) { 
+                    const specialties = [
+                    { code: 'B049', name: 'Құқық', grants: 100 },
+                    { code: 'B096', name: 'Құқық қорғау қызметі', grants: 0 }
+                ];
+                displaySpecialties(specialties);
+            }
+            else if ((subject1 === 'mathematics' && subject2 === 'geography') ||
+                    (subject1 === 'geography' && subject2 === 'mathematics')) { 
+                    const specialties = [
+                    { code: 'B038', name: 'Әлеуметтану', grants: 117 },
+                    { code: 'B044', name: 'Менеджмент және басқару', grants: 325 },
+                    { code: 'B045', name: 'Аудит және салық салу', grants: 146 },
+                    { code: 'B046', name: 'Қаржы, экономика, банк және сақтандыру ісі', grants: 368 },
+                    { code: 'B047', name: 'Маркетинг және жарнама', grants: 95 },
+                    { code: 'B048', name: 'Еңбек дағдылары', grants: 25 },
+                    { code: 'B052', name: 'Жер туралы ғылым', grants: 407 },
+                    { code: 'B075', name: 'Кадастр және жерге орналастыру', grants: 274 },
+                    { code: 'B095', name: 'Көлік қызметтері', grants: 348 }
+                ];
+                displaySpecialties(specialties);
+            }
+            else if ((subject1 === 'mathematics' && subject2 === 'informatics') ||
+                    (subject1 === 'informatics' && subject2 === 'mathematics')) { 
+                    const specialties = [
+                    { code: 'B011', name: 'Информатика мұғалімдерін даярлау', grants: 513 },
+                    { code: 'B057', name: 'Ақпараттық технологиялар', grants: 3643 },
+                    { code: 'B058', name: 'Ақпараттық қауіпсіздік', grants: 2302 }
+                ];
+                displaySpecialties(specialties);
+            }
+            else if ((subject1 === 'mathematics' && subject2 === 'physics') ||
+                    (subject1 === 'physics' && subject2 === 'mathematics')) { 
+                    const specialties = [
+                    { code: 'B009', name: 'Математика мұғалімдерін даярлау', grants: 580 },
+                    { code: 'B010', name: 'Физика мұғалімдерін даярлау', grants: 738 },
+                    { code: 'B054', name: 'Физика', grants: 841 },
+                    { code: 'B055', name: 'Математика және статистика', grants: 503 },
+                    { code: 'B056', name: 'Механика', grants: 260 },
+                    { code: 'B059', name: 'Коммуникациялар және коммуникациялық технологиялар', grants: 707 },
+                    { code: 'B061', name: 'Материалтану және технологиялар', grants: 150 },
+                    { code: 'B062', name: 'Электр техникасы және энергетика', grants: 1955 },
+                    { code: 'B063', name: 'Электр техникасы және автоматтандыру', grants: 670 },
+                    { code: 'B064', name: 'Механика және металл өңдеу', grants: 1800 },
+                    { code: 'B065', name: 'Автокөлік құралдары', grants: 555 },
+                    { code: 'B066', name: 'Теңіз көлігі және технологиялары', grants: 123 },
+                    { code: 'B067', name: 'Әуе көлігі және технологиялары', grants: 250 },
+                    { code: 'B069', name: 'Материалдар өндірісі (шыны, қағаз, пластик, ағаш)', grants: 209 },
+                    { code: 'B070', name: 'Тоқыма: киім, аяқ киім және былғары бұйымдары', grants: 750 },
+                    { code: 'B071', name: 'Тау-кен ісі және пайдалы қазбаларды өндіру', grants: 1763 },
+                    { code: 'B074', name: 'Қала құрылысы, құрылыс жұмыстары және азаматтық құрылыс', grants: 2599 },
+                    { code: 'B076', name: 'Стандарттау, сертификаттау және метрология (сала бойынша)', grants: 325 },
+                    { code: 'B081', name: 'Жерге орналастыру', grants: 0 },
+                    { code: 'B082', name: 'Су ресурстары және суды пайдалану', grants: 231 },
+                    { code: 'B094', name: 'Санитарлық-профилактикалық іс-шаралар', grants: 300 },
+                    { code: 'B097', name: 'Өрт қауіпсіздігі', grants: 0 },
+                    { code: 'B167', name: 'Ұшу аппараттарын және қозғалтқыштарды ұшырып пайдалану', grants: 104 },
+                    { code: 'B183', name: 'Агроинженерия', grants: 352 }
+                    ];
+                displaySpecialties(specialties);
+            }
+            else if ((subject1 === 'chemistry' && subject2 === 'physics') ||
+                    (subject1 === 'physics' && subject2 === 'chemistry')) { 
+                    const specialties = [
+                    {code: 'B060', name: 'Химиялық инженерия және процестер', grants: 914}
+                ];
+                displaySpecialties(specialties);
+            }
+            else if ((subject1 === 'entrepreneurship' && subject2 === 'entrepreneurship') ||
+                    (subject1 === 'entrepreneurship' && subject2 === 'entrepreneurship')) { 
+                    const specialties = [
+                    { code: 'B004', name: 'Бастапқы әскери дайындық мұғалімдерін даярлау', grants: 0 },
+                    { code: 'B005', name: 'Дене шынықтыру мұғалімдерін даярлау', grants: 202 },
+                    { code: 'B006', name: 'Музыка мұғалімдерін даярлау', grants: 30 },
+                    { code: 'B007', name: 'Көркем еңбек және сызу мұғалімдерін даярлау', grants: 0 },
+                    { code: 'B021', name: 'Орындаушылық өнер', grants: 20 },
+                    { code: 'B022', name: 'Музыкатану', grants: 0 },
+                    { code: 'B023', name: 'Режиссура, арт-менеджмент', grants: 0 },
+                    { code: 'B024', name: 'Өнертану', grants: 0 },
+                    { code: 'B025', name: 'Дирижерлеу', grants: 0 },
+                    { code: 'B026', name: 'Композиция', grants: 19 },
+                    { code: 'B027', name: 'Театр өнері', grants: 35 },
+                    { code: 'B028', name: 'Хореография', grants: 45 },
+                    { code: 'B029', name: 'Аудиовизуалды құрылғылар және медиа өндіріс', grants: 100 },
+                    { code: 'B030', name: 'Бейнелеу өнері', grants: 46 },
+                    { code: 'B031', name: 'Сән, дизайн', grants: 190 },
+                    { code: 'B033', name: 'Дінтану және теология', grants: 200 },
+                    { code: 'B042', name: 'Журналистика және репортер ісі', grants: 197 },
+                    { code: 'B073', name: 'Сәулет', grants: 361 },
+                    { code: 'B092', name: 'Тынығу', grants: 180 }
+                ];
+                displaySpecialties(specialties);
+            }
+            else if ((subject1 === 'chemistry' && subject2 === 'physics') ||
+                    (subject1 === 'physics' && subject2 === 'chemistry')) { 
+                    const specialties = [
+                    { code: 'B016', name: 'Қазақ тілі мен әдебиеті мұғалімдерін даярлау', grants: 450 }
+                ];
+                displaySpecialties(specialties);
+            }
+            else if ((subject1 === 'kazakh_language' && subject2 === 'kazakh_literature') ||
+                    (subject1 === 'kazakh_literature' && subject2 === 'kazakh_language')) { 
+                    const specialties = [
+                    { code: 'B016', name: 'Қазақ тілі мен әдебиеті мұғалімдерін даярлау', grants: 450 }, 
+                    { code: 'B037', name: 'Филология', grants: 100 },
+                    { code: 'B043', name: 'Кітапхана ісі, ақпараттарды өңдеу және мұрағат ісі', grants: 25 }
+                ];
+                displaySpecialties(specialties);
+            }
+            else if ((subject1 === 'russian_language' && subject2 === 'russian_literature') ||
+                    (subject1 === 'russian_literature' && subject2 === 'russian_language')) { 
+                    const specialties = [
+                    { code: 'B017', name: 'Орыс тілі мен әдебиеті мұғалімдерін даярлау', grants: 550 },
+                    { code: 'B037', name: 'Филология', grants: 100 },
+                    { code: 'B043', name: 'Кітапхана ісі, ақпараттарды өңдеу және мұрағат ісі', grants: 25 }
+                ];
+                displaySpecialties(specialties);
+            }
+            else {
+                displaySpecialties([]);
+            }
+}
+        function displaySpecialties(specialties) {
+            const specialtiesList = document.getElementById("specialtiesList");
+            if (specialties.length > 0) {
+                let html = "<h2>Білім беру бағдарламалары:</h2><ul>";
+                specialties.forEach(specialty => {
+                    html += `<li>${specialty.name} (${specialty.code}) - Гранттар саны (2021): ${specialty.grants}</li>`;
+                });
+                html += "</ul>";
+                specialtiesList.innerHTML = html;
+            } else {
+                specialtiesList.innerHTML = "<p>Таңдалған пәндер бойынша мамандықтар жоқ.</p>";
+            }
+        }
+    </script>
+</body>
+</html>
